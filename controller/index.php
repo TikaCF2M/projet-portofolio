@@ -1,2 +1,2 @@
 <?php
-include "../vue/contact.php";
+include "../vue/accueil.php";

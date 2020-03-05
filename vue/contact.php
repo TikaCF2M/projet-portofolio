@@ -13,7 +13,7 @@
 <?php include "nav.html"
 ?>
 <div class="container">
-    <fieldset
+    <fieldset class="jumbotron"
     <form method="post" action="post-contact.php">
         <div class="form-row">
             <div class="form-group col-md-6">
@@ -34,18 +34,18 @@
             </div>
         </div>
         <div class="form-group">
-            <label for="inputAddress">Addresse</label>
+            <label for="inputAddress">Adresse</label>
             <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputCity">Ville</label>
-                <input type="text" class="form-control" id="inputCity">
+                <input name="ville" type="text" class="form-control" id="inputCity">
             </div>
             <div class="form-group col-md-4">
                 <label for="inputState">Pays</label>
-                <select id="inputState" class="form-control">
-                    <option selected>Choose...</option>
+                <select name="pays" id="inputState" class="form-control">
+                    <option selected>Veuillez choisir...</option>
                     <option>Suisse</option>
                     <option>Maroc</option
                     <option>Belgique</option>
@@ -59,18 +59,18 @@
             </div>
             <div class="form-group col-md-2">
                 <label for="inputZip">Code Postal</label>
-                <input type="text" class="form-control" id="inputZip">
+                <input name="postal" type="text" class="form-control" id="inputZip">
             </div>
         </div>
         <div class="form-group">
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="gridCheck">
+                <input name="checkbox" class="form-check-input" type="checkbox" id="gridCheck">
                 <label class="form-check-label" for="gridCheck">
                     J'ai lu et j'accepte
                 </label>
             </div>
         </div>
-        <button nom="button" type="submit" class="btn btn-secondary">Envoyez!</button>
+        <button name="button" type="submit" class="btn btn-secondary">Envoyez!</button>
     </form>
     </fieldset
 </div>
