@@ -1,0 +1,13 @@
+.masthead-brand {
+    margin-right: 12%;
+}
+
+a.nav-link {
+    color: white;
+    border-bottom: .20rem solid transparent;
+    font-weight: bold;
+    padding: 5px;
+}
+.nav-link:hover{
+    border-bottom-color: white;
+}
