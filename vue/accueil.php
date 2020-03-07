@@ -10,7 +10,7 @@
     <title>Document</title>
 </head>
 <body>
-<?php include "nav.html"
+<?php include "nav.php"
 ?>
 <div class="container d-flex justify-content-center presentation">
     <div class="row">
@@ -27,14 +27,11 @@
 </div>
 <div class="container d-flex justify-content-center">
     <div class="row">
-        <div class="col"><a href="#" class="btn btn-lg btn-secondary">Portofolio</a><a href="#"
-                                                                                       class="btn btn-lg btn-secondary">Lien</a><a
-                    href="#" class="btn btn-lg btn-secondary">Tutoriel</a><a
-                    href="#" class="btn btn-lg btn-secondary">Contact</a>
+        <div class="col"><a href="?q=portofolio" class="btn btn-lg btn-secondary">Portofolio</a><a href="?q=lien"
+                                                                                                   class="btn btn-lg btn-secondary">Lien</a><a
+                    href="?q=tuto" class="btn btn-lg btn-secondary">Tutoriel</a><a
+                    href="?q=contact" class="btn btn-lg btn-secondary">Contact</a>
         </div>
-
     </div>
-
-
 </body>
 </html>

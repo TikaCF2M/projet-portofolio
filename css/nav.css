@@ -5,8 +5,11 @@
 a.nav-link {
     color: white;
     border-bottom: .20rem solid transparent;
+    font-size: 1.2em;
     font-weight: bold;
     padding: 5px;
+
+
 }
 .nav-link:hover{
     border-bottom-color: white;

@@ -14,11 +14,11 @@
         <div class="inner">
 
             <nav class="nav nav-masthead justify-content-sm-center">
-                <h3 class="masthead-brand">Thomas</h3>
-                <a class="nav-link active" href="#">Acceuil</a>
-                <a class="nav-link" href="#">Tutoriel</a>
-                <a class="nav-link" href="#">Liens</a>
-                <a class="nav-link" href="#">Contact</a>
+                <h3 class="masthead-brand">En développement</h3>
+                <a class="nav-link active" href="./">Acceuil</a>
+                <a class="nav-link" href="?q=tuto">Tutoriel</a>
+                <a class="nav-link" href="?q=lien">Liens</a>
+                <a class="nav-link" href="?q=contact">Contact</a>
 
             </nav>
         </div>
