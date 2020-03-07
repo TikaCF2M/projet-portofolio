@@ -27,10 +27,12 @@
 </div>
 <div class="container d-flex justify-content-center">
     <div class="row">
-        <div class="col"><a href="?q=portofolio" class="btn btn-lg btn-secondary">Portofolio</a><a href="?q=lien"
-                                                                                                   class="btn btn-lg btn-secondary">Lien</a><a
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <a href="?q=portofolio" class="btn btn-lg btn-secondary">Portofolio</a><a href="?q=lien"
+                                                                                      class="btn btn-lg btn-secondary">Lien</a><a
                     href="?q=tuto" class="btn btn-lg btn-secondary">Tutoriel</a><a
                     href="?q=contact" class="btn btn-lg btn-secondary">Contact</a>
+
         </div>
     </div>
 </body>

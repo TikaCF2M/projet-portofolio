@@ -17,6 +17,6 @@ if (!isset($_GET['q'])) {
             include "../vue/portofolio.php";
             break;
         default:
-            echo "Nique tes morts";
+            echo "oust";
     }
 
