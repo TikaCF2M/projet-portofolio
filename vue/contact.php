@@ -17,7 +17,7 @@ session_start(); ?>
 
     <div class="container">
 
-        <fieldset class="jumbotron">
+        <fieldset class="jumbotron shadow-lg">
 
             <?php
             if (array_key_exists('errors', $_SESSION)): ?>
@@ -105,53 +105,53 @@ session_start(); ?>
                 <div class="form-group">
                     <!-- Button trigger modal -->
                     <button type="button" class="btn btn-secondary" data-toggle="modal"
-                            data-target="#exampleModalScrollable">Mentions légales
-                    </button>
+                                                                                 data-target="#exampleModalScrollable">Mentions légales
+                            </button>
 
-                    <!-- Modal -->
-                    <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog"
-                         aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-scrollable" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title mentiontitre" id="exampleModalScrollableTitle">Mentions
-                                        légales</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body condition">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium soluta,
-                                    tempore? Accusamus accusantium consectetur consequatur consequuntur deserunt dolor
-                                    doloribus et fuga impedit labore libero nobis obcaecati, perferendis quaerat
-                                    quisquam quo quod ratione repellat similique, sit sunt suscipit, veniam vitae
-                                    voluptas voluptatibus! Assumenda delectus dolores doloribus eaque et magni maiores
-                                    molestias numquam officia, perspiciatis quaerat, quis quod suscipit veritatis
-                                    voluptatibus? Dolorum id inventore, laudantium mollitia odit reprehenderit tempore
-                                    unde voluptatum. Adipisci aliquam, amet, asperiores commodi corporis deserunt
-                                    distinctio doloremque et excepturi id maxime molestiae placeat quas quidem soluta
-                                    tenetur voluptate? Aspernatur at cupiditate deserunt ipsa natus nobis repudiandae
-                                    rerum sint voluptate? Exercitationem impedit, natus nihil pariatur quaerat quod
-                                    voluptates. Excepturi facere laboriosam laborum officiis quibusdam rerum sapiente
-                                    vitae voluptate! Aspernatur distinctio eum fuga laboriosam libero minus non,
-                                    officiis, quaerat quia rerum sunt suscipit! A, aliquid consectetur dolorem
-                                    exercitationem illo labore minima repudiandae! Aut obcaecati officia pariatur. Ab
-                                    architecto eos explicabo hic, id inventore minus necessitatibus nemo, odit sint
-                                    temporibus ut veritatis voluptate! Autem blanditiis commodi delectus distinctio
-                                    dolorem ea earum, eius harum, labore laborum laudantium libero magnam minima
-                                    molestias nihil numquam placeat possimus, quasi quod ratione suscipit totam vero
-                                    voluptates. Ad aperiam corporis iusto minima neque odit quibusdam velit voluptas
-                                    voluptatem!
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog"
+                                 aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title mentiontitre" id="exampleModalScrollableTitle">Mentions
+                                                légales</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body condition">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium soluta,
+                                            tempore? Accusamus accusantium consectetur consequatur consequuntur deserunt dolor
+                                            doloribus et fuga impedit labore libero nobis obcaecati, perferendis quaerat
+                                            quisquam quo quod ratione repellat similique, sit sunt suscipit, veniam vitae
+                                            voluptas voluptatibus! Assumenda delectus dolores doloribus eaque et magni maiores
+                                            molestias numquam officia, perspiciatis quaerat, quis quod suscipit veritatis
+                                            voluptatibus? Dolorum id inventore, laudantium mollitia odit reprehenderit tempore
+                                            unde voluptatum. Adipisci aliquam, amet, asperiores commodi corporis deserunt
+                                            distinctio doloremque et excepturi id maxime molestiae placeat quas quidem soluta
+                                            tenetur voluptate? Aspernatur at cupiditate deserunt ipsa natus nobis repudiandae
+                                            rerum sint voluptate? Exercitationem impedit, natus nihil pariatur quaerat quod
+                                            voluptates. Excepturi facere laboriosam laborum officiis quibusdam rerum sapiente
+                                            vitae voluptate! Aspernatur distinctio eum fuga laboriosam libero minus non,
+                                            officiis, quaerat quia rerum sunt suscipit! A, aliquid consectetur dolorem
+                                            exercitationem illo labore minima repudiandae! Aut obcaecati officia pariatur. Ab
+                                            architecto eos explicabo hic, id inventore minus necessitatibus nemo, odit sint
+                                            temporibus ut veritatis voluptate! Autem blanditiis commodi delectus distinctio
+                                            dolorem ea earum, eius harum, labore laborum laudantium libero magnam minima
+                                            molestias nihil numquam placeat possimus, quasi quod ratione suscipit totam vero
+                                            voluptates. Ad aperiam corporis iusto minima neque odit quibusdam velit voluptas
+                                            voluptatem!
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="form-check">
-                        <input required name="checkbox" class="form-check-input" type="checkbox" id="gridCheck">
-                        <label  class="form-check-label" for="gridCheck">
+                            <div class="form-check">
+                                <input required name="checkbox" class="form-check-input" type="checkbox" id="gridCheck">
+                                <label class="form-check-label" for="gridCheck">
                             J'ai lu et j'accepte les mentions légales.
                         </label>
                     </div>
