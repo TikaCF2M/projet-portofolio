@@ -49,3 +49,6 @@ fieldset{
 .mentiontitre{
     color: black;
 }
+textarea{
+    height: 200px;
+}
