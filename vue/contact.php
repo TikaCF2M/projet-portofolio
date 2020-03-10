@@ -5,7 +5,8 @@ session_start(); ?>
     <head>
         <link rel="stylesheet" href="../css/bootstrap.min.css">
         <link rel="stylesheet" href="../css/styles.css">
-        <meta charset="UTF-8">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat|Nunito&display=swap" rel="stylesheet">
+         <meta charset="UTF-8">
         <meta name="viewport"
               content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -15,7 +16,7 @@ session_start(); ?>
     <?php include "nav.php"
     ?>
 
-    <div class="container">
+    <div class="container contact">
 
         <fieldset class="jumbotron shadow-lg">
 
@@ -32,7 +33,7 @@ session_start(); ?>
                 </div>
             <?php endif; ?>
 
-            <h3>Me contacter:</h3>
+            <h3 id="titre-formulaire">Me contacter:</h3>
             <form action="../vue/post_contact.php" method="POST">
                 <div class="form-row">
                     <div class="form-group col-md-6">

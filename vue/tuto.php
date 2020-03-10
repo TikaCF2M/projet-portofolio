@@ -16,13 +16,13 @@
     <div class="row-cols-12 text-center titretuto">
         <h1>Bienvenue sur mes tutoriels</h1>
     </div>
-    <div class="container d-flex justify-content-center">
+    <div class="container-fluid d-flex justify-content-center">
         <div class="row">
             <div class="col-6">
                 <div class="card m-3 p-3 shadow-lg" style="width: 18rem;">
                     <img src="../vue/js-img.png" class="card-img-top" alt="image">
                     <div class="card-body">
-                        <h5 class="card-title">Les condition en Javascript</h5>
+                        <h5 class="card-title ">Les condition en Javascript</h5>
                         <p class="card-text">Nous allons essayer de mieux comprendre les conditions en Javascript.</p>
                         <a href="?q=tutojs" class="btn btn-secondary">Commencer</a>
                     </div>

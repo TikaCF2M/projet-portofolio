@@ -37,7 +37,3 @@ class Autogrow extends HTMLTextAreaElement {
 
 customElements.define('textarea-autogrow',
     Autogrow, {extends: 'textarea'});
-function placeOject() {
-    c
-
-}
