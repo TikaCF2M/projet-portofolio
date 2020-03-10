@@ -33,6 +33,7 @@ fieldset{
     margin-top: 10%;
     color: white;
 
+
 }
 .jumbotron{
     background-color: #a19cc5;
@@ -51,4 +52,9 @@ fieldset{
 }
 textarea{
     height: 200px;
+}
+.btn-ticket{
+
+
+
 }

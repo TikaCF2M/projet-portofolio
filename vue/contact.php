@@ -55,7 +55,7 @@ session_start(); ?>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="Tel4">Tel</label>
-                        <input name="tel" type="text" class="form-control" id="Tel4"
+                        <input required name="tel" type="text" class="form-control" id="Tel4"
                                placeholder="04"
                                value="<?= isset($_SESSION['input']['tel']) ? $_SESSION['input']['tel'] : ""; ?>">
                     </div>

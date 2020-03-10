@@ -16,6 +16,12 @@ if (!isset($_GET['q'])) {
         case "portofolio":
             include "../vue/portofolio.php";
             break;
+        case "tutojs":
+            include "../vue/tutojs.php";
+            break;
+        case"exojs":
+            include "../vue/exojs.php";
+            break;
         default:
             echo "oust";
     }

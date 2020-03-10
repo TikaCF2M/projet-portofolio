@@ -12,8 +12,8 @@ if (!array_key_exists('email', $_POST) || $_POST['email'] == '' || filter_has_va
 if (!array_key_exists('message', $_POST) || $_POST['message'] == '') {
     $errors['message'] = "Vous n'avez pas renseigné votre message";
 }
-if (!array_key_exists('message', $_POST) || $_POST['message'] == '') {
-    $errors['message'] = "Vous n'avez pas renseigné votre message";
+if (!array_key_exists('tel', $_POST) || $_POST['tel'] == '') {
+    $errors['tel'] = "Vous n'avez pas renseigné votre numéro de téléphone";
 }
 var_dump($errors);
 session_start();
