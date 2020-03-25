@@ -19,7 +19,7 @@
     <div class="container-fluid d-flex justify-content-center">
         <div class="row">
             <div class="col-6">
-                <div class="card m-3 p-3 shadow-lg" style="width: 18rem;">
+                <div id="test" class="card m-3 p-3 shadow-lg" style="width: 18rem;">
                     <img src="../vue/js-img.png" class="card-img-top" alt="image">
                     <div class="card-body">
                         <h5 class="card-title ">Les condition en Javascript</h5>
@@ -39,6 +39,6 @@
             </div>
         </div>
     </div>
-
+    <script src="test.js" defer></script>
 </body>
 </html>

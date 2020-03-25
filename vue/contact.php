@@ -6,7 +6,7 @@ session_start(); ?>
         <link rel="stylesheet" href="../css/bootstrap.min.css">
         <link rel="stylesheet" href="../css/styles.css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat|Nunito&display=swap" rel="stylesheet">
-         <meta charset="UTF-8">
+        <meta charset="UTF-8">
         <meta name="viewport"
               content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -21,6 +21,9 @@ session_start(); ?>
         <fieldset class="jumbotron shadow-lg">
 
             <?php
+            /*
+             * affichage erreur ou reussite de l'envoie
+             */
             if (array_key_exists('errors', $_SESSION)): ?>
                 <div class="alert-danger">
                     <?= implode("<br>", $_SESSION['errors']); ?>
@@ -97,10 +100,9 @@ session_start(); ?>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="inputMessage">Votre message</label>
-                    <textarea id="inputMessage" name="message"
-                              class="form-control"
-                              is="textarea-autogrow" <?= isset($_SESSION['input']['message']) ? $_SESSION['input']['message'] : ""; ?>>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A alias, architecto dolores, excepturi illo mollitia placeat qui sed soluta totam unde, voluptatem voluptatibus. Ab accusantium adipisci architecto, blanditiis consequuntur corporis culpa debitis eligendi, enim error eum labore maxime molestiae nisi nulla recusandae suscipit ut velit veritatis, vitae. A atque autem obcaecati perspiciatis? Architecto aut culpa et, ex facere in iusto maiores modi nisi repellat sapiente similique soluta velit! Aspernatur debitis, enim ipsum iste natus necessitatibus neque reprehenderit vel? Aut, dolorum.</textarea>
+                    <label for="inputMessage">Votre message</label><textarea id="inputMessage" name="message"
+                                                                             class="form-control"
+                                                                             is="textarea-autogrow" <?= isset($_SESSION['input']['message']) ? $_SESSION['input']['message'] : ""; ?>>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A alias, architecto dolores, excepturi illo mollitia placeat qui sed soluta totam unde, voluptatem voluptatibus. Ab accusantium adipisci architecto, blanditiis consequuntur corporis culpa debitis eligendi, enim error eum labore maxime molestiae nisi nulla recusandae suscipit ut velit veritatis, vitae. A atque autem obcaecati perspiciatis? Architecto aut culpa et, ex facere in iusto maiores modi nisi repellat sapiente similique soluta velit! Aspernatur debitis, enim ipsum iste natus necessitatibus neque reprehenderit vel? Aut, dolorum.</textarea>
                 </div>
 
 

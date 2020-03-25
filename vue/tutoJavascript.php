@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Nunito&display=swap" rel="stylesheet">
@@ -20,7 +21,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <div class="jumbotron shadow-lg">
+                <div class="jumbotron  bg-white shadow-lg tutojs-title">
                     <h3>Pour commencer...</h3>
                     <div class="row col-12">
 
@@ -32,10 +33,35 @@
 
 
                 </div>
+                <div class="jumbotron tutojs-title bg-white shadow-lg">
+                    <h3>Pour commencer...</h3>
+                    <div class="row col-12">
+
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur dignissimos dolore
+                        doloremque dolores ducimus id ipsam mollitia necessitatibus nesciunt, officia, omnis quibusdam
+                        quo rem repellat saepe similique temporibus ut voluptate.
+
+                    </div>
+
+
+                </div>
+                <div class="jumbotron tutojs-title bg-white shadow-lg">
+                    <h3>Pour commencer...</h3>
+                    <div class="row col-12">
+
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur dignissimos dolore
+                        doloremque dolores ducimus id ipsam mollitia necessitatibus nesciunt, officia, omnis quibusdam
+                        quo rem repellat saepe similique temporibus ut voluptate.
+                        <?php
+                        include "commentaires.php"
+                        ?>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"

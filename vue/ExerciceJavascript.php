@@ -29,7 +29,6 @@
     <div class="container">
         <div class="row">
             <p>
-
                 <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample"
                         aria-expanded="false" aria-controls="collapseExample">
                     Solution
@@ -37,41 +36,41 @@
             </p>
             <div class="collapse" id="collapseExample">
                 <div class="card card-body">
+                    <code>
+                        const buttons = document.querySelectorAll("button"); <br>
+                        let score = 0;<br>
 
-                    const buttons = document.querySelectorAll("button"); <br>
-                    let score = 0;<br>
+                        for (let i = 0; i < buttons.length; i++) {<br>
+                        buttons[i].addEventListener("click", function () {<br>
+                        const joueur = buttons[i].innerHTML;<br>
+                        const robot = buttons [Math.floor(Math.random() * buttons.length)].innerHTML;<br>
+                        let resultat = "";<br>
 
-                    for (let i = 0; i < buttons.length; i++) {<br>
-                    buttons[i].addEventListener("click", function () {<br>
-                    const joueur = buttons[i].innerHTML;<br>
-                    const robot = buttons [Math.floor(Math.random() * buttons.length)].innerHTML;<br>
-                    let resultat = "";<br>
+                        if (joueur === robot) {<br>
+                        resultat = "Egalité"<br>
 
-                    if (joueur === robot) {<br>
-                    resultat = "Egalité"<br>
+                        } else if ((joueur === "Pierre" && robot === "Ciseaux") || (joueur === "Feuille" && robot ===
+                        "Pierre") || (joueur === "Ciseaux" && robot === "Feuille")) {<br>
+                        resultat = "gagné";<br>
+                        ++score;<br>
+                        } else {<br>
+                        resultat = "perdu"<br>
+                        }
+                        document.querySelector(".resultat").innerHTML = `<br>
+                        Joueur :${joueur} </br><br>
 
-                    } else if ((joueur === "Pierre" && robot === "Ciseaux") || (joueur === "Feuille" && robot ===
-                    "Pierre") || (joueur === "Ciseaux" && robot === "Feuille")) {<br>
-                    resultat = "gagné";<br>
-                    ++score;<br>
-                    } else {<br>
-                    resultat = "perdu"<br>
-                    }
-                    document.querySelector(".resultat").innerHTML = `<br>
-                    Joueur :${joueur} </br><br>
+                        Robot : ${robot}</br>
 
-                    Robot : ${robot}</br>
-
-                    ${resultat}<br>
-                    `;
-                    console.log(`Joueur : ${joueur} VS Robot :$ {robot}`);<br>
-                    console.log(score)<br>
+                        ${resultat}<br>
+                        `;
+                        console.log(`Joueur : ${joueur} VS Robot :$ {robot}`);<br>
+                        console.log(score)<br>
 
 
-                    });<br>
+                        });<br>
 
-                    }
-
+                        }
+                    </code>
                 </div>
             </div>
         </div>

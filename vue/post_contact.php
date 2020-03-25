@@ -1,5 +1,11 @@
 <?php
+require_once '../controller/config.php';
+
+$db = @mysqli_connect(DB_HOST, DB_LOGIN, DB_PWD, DB_NAME, DB_PORT);
+
+
 $errors = [];
+
 if (!array_key_exists('nom', $_POST) || $_POST['nom'] == '') {
     $errors['nom'] = "Vous n'avez pas renseigné votre nom";
 }
@@ -15,7 +21,8 @@ if (!array_key_exists('message', $_POST) || $_POST['message'] == '') {
 if (!array_key_exists('tel', $_POST) || $_POST['tel'] == '') {
     $errors['tel'] = "Vous n'avez pas renseigné votre numéro de téléphone";
 }
-var_dump($errors);
+
+
 session_start();
 if (!empty($errors)) {
 
@@ -27,7 +34,19 @@ if (!empty($errors)) {
     $message = $_POST['message'];
     $headers = 'From:Tika@local.dev';
     mail('tika@local.dev', 'Formulaire de contact', $message, $headers);
+    // test collecte donnees
+    $prenom = htmlspecialchars(strip_tags(trim($_POST['prenom'])), ENT_QUOTES);
+    $nom = htmlspecialchars(strip_tags(trim($_POST['nom'])), ENT_QUOTES);
+    $email = filter_has_var($_SESSION['email'], FILTER_VALIDATE_EMAIL);
+    $tel = htmlspecialchars(strip_tags(trim($_POST['tel'])), ENT_QUOTES);
+    $adresse = htmlspecialchars(strip_tags(trim($_POST['adresse'])), ENT_QUOTES);
+    $ville = htmlspecialchars(strip_tags(trim($_POST['ville'])), ENT_QUOTES);
+    $pays = htmlspecialchars(strip_tags(trim($_POST['pays'])), ENT_QUOTES);
+    $postal = htmlspecialchars(strip_tags(trim($_POST['postal'])), ENT_QUOTES);
+    $sql = "INSERT INTO donnees_utilisateur_contact(`prenom_contact`, `nom_contact`, `email_contact`, `tel_contact`, `adresse_contact`, `ville_contact`, `pays_contact`, `codePostal_contact`)  VALUES ('$prenom','$nom','$email','$tel','$adresse','$ville','$pays','$postal' )";
+    mysqli_query($db, $sql);
+
+
     header('location:../controller/index.php?q=contact');
 
 }
-
