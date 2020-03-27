@@ -7,10 +7,11 @@ if (!array_key_exists('text', $_POST) || $_POST['text'] == '') {
 if (!empty($text)) {
     $sql = "INSERT INTO commentaires (text) VALUES ('$text')";
     mysqli_query($db, $sql) or die("Erreur n° " . mysqli_errno($db) . " Description : " . mysqli_error($db));
-    header("location: ./");
+    header("location: ?q=tutojs");
 
 } else {
-    header("location: ./");
+    header("location: ?q=tutojs");
 }
+
 
 

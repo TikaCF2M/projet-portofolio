@@ -16,7 +16,7 @@ if (isset($_POST['text'])) {
 } else {
     require_once "index.php";
 }
-
+ ;
 if (!isset($_GET['q'])) {
     include "../vue/accueil.php";
 } else
