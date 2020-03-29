@@ -14,6 +14,7 @@ $db = mysqli_connect(DB_HOST, DB_LOGIN, DB_PWD, DB_NAME, DB_PORT);
     <title>Document</title>
 </head>
 <body>
+<div class="container">
 <form class="form-signin" METHOD="post" action="">
     <div class="text-center mb-4">
         <img class="mb-4" src="https://www.nautiljon.com/images/perso/00/86/tifa_lockhart_4168.jpg" alt="" width="72"
@@ -37,6 +38,7 @@ $db = mysqli_connect(DB_HOST, DB_LOGIN, DB_PWD, DB_NAME, DB_PORT);
 
     <button class="btn btn-lg btn-primary btn-block" name="envoi" type="submit">Sign in</button>
     <p class="mt-5 mb-3 text-muted text-center">&copy; 2020</p>
+</div>
     <?php
     if (isset($_POST['user'])) {
         $pwd = htmlspecialchars(strip_tags(trim($_POST['password'])), ENT_QUOTES);
@@ -51,8 +53,10 @@ $db = mysqli_connect(DB_HOST, DB_LOGIN, DB_PWD, DB_NAME, DB_PORT);
             echo "mauvaise combinaison";
         } else {
             session_start();
+            $_SESSION['connect']=1;
             $_SESSION['user'] = $resultUser;
-            header("location: admin.php");
+            $_SESSION['pwd'] = $resulPassword;
+            header("location:admin.php");
         }
     }
     ?>
