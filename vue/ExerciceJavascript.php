@@ -51,7 +51,7 @@
 
                         } else if ((joueur === "Pierre" && robot === "Ciseaux") || (joueur === "Feuille" && robot ===
                         "Pierre") || (joueur === "Ciseaux" && robot === "Feuille")) {<br>
-                        resultat = "gagné";<br>
+                        resultat = "gagné";<br>♠
                         ++score;<br>
                         } else {<br>
                         resultat = "perdu"<br>
