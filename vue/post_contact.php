@@ -1,11 +1,7 @@
 <?php
-require_once '../controller/config.php';
-
+include "../controller/config.php";
 $db = @mysqli_connect(DB_HOST, DB_LOGIN, DB_PWD, DB_NAME, DB_PORT);
-
-
 $errors = [];
-
 if (!array_key_exists('nom', $_POST) || $_POST['nom'] == '') {
     $errors['nom'] = "Vous n'avez pas renseigné votre nom";
 }

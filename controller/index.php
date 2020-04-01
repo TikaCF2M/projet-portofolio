@@ -1,13 +1,9 @@
 <?php
-
 require_once 'config.php';
-
 $db = @mysqli_connect(DB_HOST, DB_LOGIN, DB_PWD, DB_NAME, DB_PORT);
 if (!$db) {
     die("Erreur n° " . mysqli_connect_errno() . " Description : " . mysqli_connect_error());
 }
-
-
 
 // requette commenttaire
 
@@ -16,7 +12,7 @@ if (isset($_POST['text'])) {
 } else {
     require_once "index.php";
 }
- ;
+// Utilisateur
 if (!isset($_GET['q'])) {
     include "../vue/accueil.php";
 } else
@@ -45,3 +41,4 @@ if (!isset($_GET['q'])) {
             echo "oust";
     }
 
+// Administration
