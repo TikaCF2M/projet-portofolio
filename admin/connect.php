@@ -12,7 +12,7 @@ session_start();
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Admin</title>
 </head>
 <body>
 <div class="container">
@@ -40,8 +40,11 @@ session_start();
         </div>
 
 
-        <button class="btn btn-lg btn-primary btn-block" name="envoi" type="submit">Sign in</button>
+        <button class="btn btn-lg btn-primary btn-block" name="envoi" type="submit">Connexion</button>
         <p class="mt-5 mb-3 text-muted text-center">&copy; 2020</p>
+
+        / Alert error & success /
+
         <?php if (isset($_SESSION['disconnect'])) {
             ?>
             <div class="alert-success">
@@ -63,16 +66,21 @@ session_start();
             $user = htmlspecialchars(strip_tags(trim($_POST['user'])), ENT_QUOTES);
             $queryUser = "SELECT user FROM utilisateur WHERE user='$user' AND  password = '$pwd' ";
             $queryPwd = "SELECT password FROM utilisateur WHERE password = '$pwd' AND  user = '$user' ";
+            //TODO empecher 2x le même nom pour user
             $testUser = mysqli_query($db, $queryUser) or die("Erreur n° " . mysqli_errno($db) . " Description : " . mysqli_error($db));
             $testPassword = mysqli_query($db, $queryPwd) or die("Erreur n° " . mysqli_errno($db) . " Description : " . mysqli_error($db));
             $resultUser = mysqli_fetch_assoc($testUser);
             $resulPassword = mysqli_fetch_assoc($testPassword);
+            //TODO probleme password_verify
+            password_verify($_POST['password'],$queryPwd);
+
             if (($resultUser == null || $resulPassword == null) || ((implode($resultUser) !== $_POST['user']) || (implode($resulPassword) !== $_POST['password']))) {
                 ?>
                 <div class="alert-danger">
                     <?= "mauvaise combinaison"; ?>
                 </div>
                 <?php
+
             } else {
                 $_SESSION['connect'] = 1;
                 $_SESSION['connectAlert'] = 1;
@@ -98,7 +106,7 @@ session_start();
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalCenterTitle">Inscription</h5>
+                    <h5 class="modal-title" >Inscription</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -123,37 +131,39 @@ session_start();
                                        required>
                                 <label for="inputPassword">Password</label>
 
+                            </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                    <button type="submit" class="btn btn-primary">Enregistrer</button>
+                    <?php if (isset($_POST['inscriptionUser']) && isset($_POST['inscriptionPassword'])) {
+
+
+                        $pwd = (htmlspecialchars(strip_tags(trim($_POST['inscriptionPassword'])), ENT_QUOTES));
+                        //TODO Proteger MDP
+                        $hashPwd = password_hash($pwd, PASSWORD_DEFAULT);
+                        $user = htmlspecialchars(strip_tags(trim($_POST['inscriptionUser'])), ENT_QUOTES);
+                        $query = "INSERT INTO `utilisateur` ( `user`, `password`) VALUES ('$user','$hashPwd');";
+                        mysqli_query($db, $query) or die("Erreur n° " . mysqli_errno($db) . " Description : " . mysqli_error($db));
+                        header('location:connect.php');
+                        $_SESSION['inscription'] = 1;
+
+                    }
+                    ?>
                 </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                <button type="submit" class="btn btn-primary">Enregistrer</button>
-                <?php if (isset($_POST['inscriptionUser'])) {
-                    $pwd = htmlspecialchars(strip_tags(trim($_POST['inscriptionPassword'])), ENT_QUOTES);
-                    $user = htmlspecialchars(strip_tags(trim($_POST['inscriptionUser'])), ENT_QUOTES);
-                    $query = "INSERT INTO `utilisateur` ( `user`, `password`) VALUES ('$user','$pwd');";
-                    mysqli_query($db, $query) or die("Erreur n° " . mysqli_errno($db) . " Description : " . mysqli_error($db));
-                    header('location:connect.php');
-                    $_SESSION['inscription'] = 1;
-                }
-                ?>
-            </div>
-
         </div>
-
     </div>
 
-</div>
 
-
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
 </body>
 </html>

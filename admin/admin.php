@@ -19,9 +19,9 @@ require_once 'verification.php'
 </style>
 <?php include 'nav.php' ?>
 <div class="container">
-    <div class="jumbotron">
+    <div class="jumbotron shadow-sm">
         <div class="container text-center"><h1>Administration</h1>
-            <div class="jumbotron-fluid bg-white">
+            <div class="jumbotron-fluid bg-white shadow-sm">
                 <ul class="nav justify-content-center">
                     <li class="nav-item">
                         <a class="nav-link active" href="#"></a>
@@ -35,10 +35,52 @@ require_once 'verification.php'
                 </ul>
                 <h2 class="mt-5">Accueil</h2>
             </div>
-<?= $helloUser ?>
-        </div>
-    </div>
+            <?= $helloUser     ?>
 
+
+            <?php
+            //TODO system pour changer de pseudo et de mot de passe
+            // Upload image
+            if (isset($_FILES['image']) && $_FILES['image']['error'] == 0) {
+                if ($_FILES['image']['size'] <= 3000000) {
+                    $informationImage = pathinfo($_FILES['image']['name']);
+                    $extentionImage = $informationImage['extension'];
+                    $extentionArray = ['png', 'gif', 'jpg', 'jpeg'];
+                    if (in_array($extentionImage, $extentionArray)) {
+                        move_uploaded_file($_FILES['image']['tmp_name'], 'uploads/' . time() . basename($_FILES['image']['name']));
+                        ?>
+                        <div class="alert-success">
+                            Votre image a bien été envoyé !
+                        </div><?php
+
+                    } else {
+                        ?>
+                        <div class="alert-warning"> Votre image format d'image est invalide. Format accepté: png gif jpg
+                            jpeg de moin de 1me
+                        </div>
+                        <?php
+                    }
+                } else {
+                    ?>
+                    <div class="alert-warning"> Votre image doit être égal ou inférieur a 1MO</div>
+                    <?php
+                }
+
+            }
+            ?>
+            <form method="post" action="" enctype="multipart/form-data">
+
+                <input type="file" name="image"/>
+                <button type="submit" name="envoyer">Envoyer</button>
+
+            </form>
+        </
+        >
+    </div>
+    <form>
+
+
+    </form>
 
 </div>
 </body>

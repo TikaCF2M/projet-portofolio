@@ -10,7 +10,7 @@ if (isset($_SESSION['connectAlert'])) {
     unset($_SESSION['connectAlert']);
 }
 if (isset($_SESSION['connect']) || isset($_SESSION['user'])) {
-    $helloUser = "Hey ! Bienvenue " . $user . ". Tu as eu xxx visiteurs";
+    $helloUser = "Hey ! Bienvenue " . ucfirst($user) . ". Tu as eu xxx visiteurs";
 } else {
     session_destroy();
     header("location:connect.php");
