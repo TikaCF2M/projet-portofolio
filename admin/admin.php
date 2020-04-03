@@ -35,11 +35,12 @@ require_once 'verification.php'
                 </ul>
                 <h2 class="mt-5">Accueil</h2>
             </div>
-            <?= $helloUser     ?>
+            <?= $helloUser ?>
 
 
             <?php
             //TODO system pour changer de pseudo et de mot de passe
+
             // Upload image
             if (isset($_FILES['image']) && $_FILES['image']['error'] == 0) {
                 if ($_FILES['image']['size'] <= 3000000) {
@@ -70,18 +71,35 @@ require_once 'verification.php'
             ?>
             <form method="post" action="" enctype="multipart/form-data">
 
-                <input type="file" name="image"/>
+                <input onchange="showMyImage(this)" type="file" name="image" accept="image/*"
+                       value="uploads/1585900608TIFA.jpg" required/>
+                <img id="affiche" style="width:20%; margin-top:10px;" src="" alt=""/>
                 <button type="submit" name="envoyer">Envoyer</button>
 
             </form>
+
+            <script> // prévisualiser l'image
+                function showMyImage(fileInput) {
+                    var files = fileInput.files;
+                    for (var i = 0; i < files.length; i++) {
+                        var file = files[i];
+                        var imageType = /image.*/;
+                        if (!file.type.match(imageType)) {
+                            continue;
+                        }
+                        var img = document.getElementById("affiche");
+                        img.file = file;
+                        var reader = new FileReader();
+                        reader.onload = (function (aImg) {
+                            return function (e) {
+                                aImg.src = e.target.result;
+                            };
+                        })(img);
+                        reader.readAsDataURL(file);
+                    }
+                }</script>
         </
-        >
     </div>
-    <form>
-
-
-    </form>
-
 </div>
 </body>
 </html>
